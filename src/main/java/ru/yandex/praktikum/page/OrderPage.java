@@ -12,9 +12,9 @@ public class OrderPage {
     private final By addressInputLocator = By.xpath("//input[@placeholder='* Адрес: куда привезти заказ']");
     private final By metroStationInputLocator = By.xpath("//input[@placeholder='* Станция метро']");
     private final String metroStationItemLocator = "//div[text()='%s']";
-
     private final By phoneNumberInputLocator = By.xpath("//input[@placeholder='* Телефон: на него позвонит курьер']");
-    private final By nextButtonLocator = By.xpath("//button[text()='Далее']");
+
+    private final By nextButtonLocator = By.xpath("//button[text() = 'Далее']");
 
 
 

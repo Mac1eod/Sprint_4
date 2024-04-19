@@ -1,11 +1,22 @@
-package ru.yandex.praktikum.page;
-
+package ru.yandex.praktikum;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class WebDriverfactory  {
+public class WebDriverFactory {
+    private WebDriver webDriver;
 
-    public WebDriver getWebDriver() {
-        
+    public static WebDriver getWebDriver(String browserType) {
+        if (browserType.equalsIgnoreCase("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
+            return new FirefoxDriver();
+
+        } else {
+            WebDriverManager.chromedriver().setup();
+            return new ChromeDriver();
+        }
+
 
     }
 }

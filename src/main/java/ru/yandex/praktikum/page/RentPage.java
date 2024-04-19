@@ -9,6 +9,7 @@ public class RentPage {
     private final String rentPeriodItemLocator = "//div[text() = '%s']";
     private final By orderButtonLocator = By.xpath("//button[@class = 'Button_Button__ra12g Button_Middle__1CSJM' and text() = 'Заказать']");
     private final By orderYesButtonLocator = By.xpath("//button[text() = 'Да']");
+    private final By orderConfirmedLocator = By.xpath("//div[@class='Order_ModalHeader__3FDaJ' and text()='Заказ оформлен']");
 
 
     public RentPage (WebDriver webDriver) {
@@ -31,5 +32,16 @@ public class RentPage {
         WebElement orderButton = webDriver.findElement(orderButtonLocator);
         orderButton.click();
     }
+
+    public void yesButtonClick() {
+        WebElement yesButton = webDriver.findElement(orderYesButtonLocator);
+        yesButton.click();
+    }
+
+    public boolean orderConfirmedWindow() {
+        WebElement orderConfirmed = webDriver.findElement(orderConfirmedLocator);
+        return  orderConfirmed.isDisplayed();
+    }
+
 
 }
