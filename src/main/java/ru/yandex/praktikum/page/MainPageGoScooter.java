@@ -49,7 +49,6 @@ public class MainPageGoScooter {
     WebElement element = webDriver.findElement(By.id(String.format(questionLocator, index)));
     ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();", element);
     new WebDriverWait(webDriver, ofSeconds(35)).until(ExpectedConditions.elementToBeClickable(element)); //с низким значением задержки в Мозиле периодически не все вопросы Аккордиона проходят
-    element.isDisplayed(); //с данным методом в Мозиле тест Аккордиона более стабилен
     element.click();
     }
 
