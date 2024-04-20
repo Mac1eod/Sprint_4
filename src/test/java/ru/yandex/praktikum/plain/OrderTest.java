@@ -15,7 +15,7 @@ import ru.yandex.praktikum.page.RentPage;
 public class OrderTest {
     private WebDriver webDriver;
     static final String URL_MAIN_PAGE = "https://qa-scooter.praktikum-services.ru/";
-    static final String BROWSER = "firefox"; //выбор браузера, подключены Chrome и Firefox
+    static final String BROWSER = "Chrome"; //выбор браузера, подключены Chrome и Firefox
     private String name;
     private String  lastName;
     private String address;
