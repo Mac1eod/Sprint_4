@@ -3,10 +3,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.chrome.ChromeDriver;
 import ru.yandex.praktikum.WebDriverFactory;
 import ru.yandex.praktikum.page.MainPageGoScooter;
 import ru.yandex.praktikum.page.OrderPage;
@@ -15,11 +12,12 @@ import ru.yandex.praktikum.page.RentPage;
 
 public class OrderTest {
     private WebDriver webDriver;
-    private static final String URL_MAIN_PAGE = "https://qa-scooter.praktikum-services.ru/";
+    static final String URL_MAIN_PAGE = "https://qa-scooter.praktikum-services.ru/";
+    static final String BROWSER = "Chrome"; //выбор браузера, подключены Chrome и Firefox
 
     @Before
     public void startUp() {
-        webDriver = WebDriverFactory.getWebDriver(System.getProperty("browser", "chrome"));
+        webDriver = WebDriverFactory.getWebDriver(BROWSER);
         webDriver.get(URL_MAIN_PAGE);
 
     }
@@ -29,6 +27,7 @@ public class OrderTest {
 
 
         MainPageGoScooter mainPageGoScooter = new MainPageGoScooter(webDriver);
+        mainPageGoScooter.cookiesButtonClick();
         mainPageGoScooter.clickUpperOrderButton();
 
         OrderPage orderPage = new OrderPage(webDriver);
@@ -47,6 +46,7 @@ public class OrderTest {
         //webDriver = new ChromeDriver();
 
         MainPageGoScooter mainPageGoScooter = new MainPageGoScooter(webDriver);
+        mainPageGoScooter.cookiesButtonClick();
         mainPageGoScooter.clickLowerOrderButton();
 
         OrderPage orderPage = new OrderPage(webDriver);

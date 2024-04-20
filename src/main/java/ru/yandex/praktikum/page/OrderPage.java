@@ -7,15 +7,26 @@ import org.openqa.selenium.WebElement;
 
 public class OrderPage {
     private  final WebDriver webDriver;
+    //Ввод Имя
     private final By nameInputLocator = By.xpath("//input[@placeholder='* Имя']");
+
+    //Ввод Фамилия
     private final By lastNameInputLocator = By.xpath("//input[@placeholder='* Фамилия']");
+
+    //Ввод Адреса
     private final By addressInputLocator = By.xpath("//input[@placeholder='* Адрес: куда привезти заказ']");
+
+    //Поле станции метро
     private final By metroStationInputLocator = By.xpath("//input[@placeholder='* Станция метро']");
+
+    //Элемент списка станций метро
     private final String metroStationItemLocator = "//div[text()='%s']";
+
+    //Ввод телефона
     private final By phoneNumberInputLocator = By.xpath("//input[@placeholder='* Телефон: на него позвонит курьер']");
 
+    //Кнопка далее
     private final By nextButtonLocator = By.xpath("//button[text() = 'Далее']");
-
 
 
     public OrderPage(WebDriver webDriver) {
